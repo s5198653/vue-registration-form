@@ -4,8 +4,14 @@ import VTitle from './VTitle.vue';
 import InputWrapper from './InputWrapper.vue';
 import VInput from './VInput.vue';
 import VButton from './VButton.vue';
+import VRadioGroup from './VRadioGroup.vue';
 
-type Gender = 'male' | 'female' | 'reptilian' | 'prefer not to say';
+enum Gender {
+  Male = 'male',
+  Female = 'female',
+  Reptilian = 'reptilian',
+  PreferNotToSay = 'prefer not to say',
+}
 
 type FormField<T extends string | boolean | Gender = string> = {
   value: T;
@@ -34,7 +40,7 @@ const formFields = reactive<FormFields>({
   email: { value: '', error: '', required: true },
   password: { value: '', error: '', required: true },
   confirmPassword: { value: '', error: '', required: true },
-  gender: { value: 'prefer not to say', error: '', required: true },
+  gender: { value: Gender.PreferNotToSay, error: '', required: true },
   isConfirmTerms: { value: false, error: '', required: true },
 });
 
@@ -97,6 +103,13 @@ function onSubmit() {
           label="Confirm password"
           type="password"
           placeholder="Confirm your password"
+        />
+      </InputWrapper>
+      <InputWrapper label="Choice gender" :error="formFields.gender.error">
+        <VRadioGroup
+          name="gender"
+          :options="Object.values(Gender)"
+          v-model="formFields.gender.value"
         />
       </InputWrapper>
       <InputWrapper label="Confirm terms" :error="formFields.isConfirmTerms.error">
