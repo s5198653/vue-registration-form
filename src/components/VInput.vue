@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { type = 'text' } = defineProps<{
-  type: 'text' | 'password' | 'email' | 'number' | 'checkbox' | 'radio' | 'tel';
+  type?: 'text' | 'password' | 'email' | 'number' | 'checkbox' | 'radio' | 'tel';
 }>();
 const model = defineModel();
 </script>
