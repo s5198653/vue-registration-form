@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue';
+import VTitle from './VTitle.vue';
 
 type FormFields = {
   firstName: string;
@@ -25,7 +26,9 @@ const formFields = reactive<FormFields>({
 </script>
 
 <template>
-  <form></form>
+  <form>
+    <VTitle tag="h2">Registration Form</VTitle>
+  </form>
 </template>
 
 <style scoped></style>
