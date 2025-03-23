@@ -60,8 +60,11 @@
 
 body {
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--color-text);
-  background: var(--color-background);
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
   transition:
     color 0.5s,
     background-color 0.5s;

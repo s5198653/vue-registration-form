@@ -8,8 +8,8 @@ const { options } = defineProps<{
 const model = defineModel();
 </script>
 <template>
-  <fieldset>
-    <label v-for="option in options" :key="option">
+  <fieldset class="v-radio-group">
+    <label v-for="option in options" :key="option" class="v-radio-group__item">
       <VInput
         :name
         :value="option"
@@ -22,4 +22,20 @@ const model = defineModel();
   </fieldset>
 </template>
 
-<style scoped></style>
+<style scoped>
+.v-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: start;
+  border: none;
+  padding: 0;
+}
+
+.v-radio-group__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+</style>
