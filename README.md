@@ -1,39 +1,26 @@
 # vue-registration-form
 
-This template should help get you started developing with Vue 3 in Vite.
+Форма регистрации с использованием Vue3 и TypeScript.
 
-## Recommended IDE Setup
+Под капотом:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1. Валидация на клиенте для каждого поля формы при потере фокуса:
 
-## Type Support for `.vue` Imports in TS
+   - Проверка заполнения обязательных полей;
+   - Валидация email, номера телефона, пароля на основе regexp;
+   - Валидация соответствия пароля и подтверждения;
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+2. API:
 
-## Customize configuration
+   - Имитация сервера на ts;
+   - Рандомный успешный/неуспешный ответ;
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+3. Стилизация:
 
-## Project Setup
+   - Чистый CSS без препроцессоров;
+   - Адаптивность;
+   - Анимация формы при ошибках с сервера;
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+4. UX:
+   - Доступность элементов формы;
+   - Отображение ошибок клиентской и серверной валидации;
