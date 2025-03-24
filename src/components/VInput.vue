@@ -32,4 +32,19 @@ const model = defineModel();
   height: 20px;
   margin-right: 5px;
 }
+
+.v-input:hover {
+  border-color: #9b59b6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.v-input:focus {
+  border-color: #71b7e6;
+  box-shadow: 0 0 5px rgba(66, 185, 131, 0.5);
+}
+
+.v-input:active {
+  border-color: #71b7e6;
+  box-shadow: none;
+}
 </style>

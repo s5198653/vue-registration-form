@@ -200,21 +200,21 @@ watch(
   >
     <VTitle tag="h2" class="registration-form__title">Please register</VTitle>
     <div class="registration-form__text-fields">
-      <InputWrapper label="First name" :error="formFields.firstName.error">
+      <InputWrapper label="First name*" :error="formFields.firstName.error">
         <VInput
           v-model="formFields.firstName.value"
           placeholder="Enter your first name"
           @input="validate('firstName')"
         />
       </InputWrapper>
-      <InputWrapper label="Last name" :error="formFields.lastName.error">
+      <InputWrapper label="Last name*" :error="formFields.lastName.error">
         <VInput
           v-model="formFields.lastName.value"
           placeholder="Enter your last name"
           @input="validate('lastName')"
         />
       </InputWrapper>
-      <InputWrapper label="Phone" :error="formFields.phone.error">
+      <InputWrapper label="Phone*" :error="formFields.phone.error">
         <VInput
           v-model="formFields.phone.value"
           type="tel"
@@ -222,7 +222,7 @@ watch(
           @input="validate('phone')"
         />
       </InputWrapper>
-      <InputWrapper label="Email" :error="formFields.email.error">
+      <InputWrapper label="Email*" :error="formFields.email.error">
         <VInput
           v-model="formFields.email.value"
           type="email"
@@ -230,7 +230,7 @@ watch(
           @input="validate('email')"
         />
       </InputWrapper>
-      <InputWrapper label="Password" :error="formFields.password.error">
+      <InputWrapper label="Password*" :error="formFields.password.error">
         <VInput
           v-model="formFields.password.value"
           type="password"
@@ -238,7 +238,7 @@ watch(
           @input="validate('password')"
         />
       </InputWrapper>
-      <InputWrapper label="Confirm password" :error="formFields.confirmPassword.error">
+      <InputWrapper label="Confirm password*" :error="formFields.confirmPassword.error">
         <VInput
           v-model="formFields.confirmPassword.value"
           type="password"
@@ -262,7 +262,7 @@ watch(
           @change="validate('receiveNews')"
         />
       </InputWrapper>
-      <InputWrapper label="Confirm terms" :error="formFields.isConfirmTerms.error" horizontal>
+      <InputWrapper label="Confirm terms*" :error="formFields.isConfirmTerms.error" horizontal>
         <VInput
           v-model="formFields.isConfirmTerms.value"
           type="checkbox"

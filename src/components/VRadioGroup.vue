@@ -37,5 +37,15 @@ const model = defineModel();
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.v-radio-group__item:hover {
+  background-color: rgba(155, 89, 182, 0.1);
+}
+
+.v-radio-group__item:active {
+  background-color: rgba(155, 89, 182, 0.2);
 }
 </style>

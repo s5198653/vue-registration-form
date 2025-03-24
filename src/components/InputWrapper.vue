@@ -14,7 +14,6 @@ defineProps<{ label: string; error: string; horizontal?: boolean }>();
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 .input-wrapper--horizontal {
   flex-direction: row;
@@ -34,11 +33,19 @@ defineProps<{ label: string; error: string; horizontal?: boolean }>();
 }
 .input-wrapper--horizontal > .input-wrapper__error {
   order: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .input-wrapper__label {
   font-size: 16px;
+  padding-bottom: 5px;
+  cursor: pointer;
 }
 .input-wrapper__error {
+  max-width: 180px;
+  min-height: 35px;
   color: red;
+  font-size: 10px;
 }
 </style>

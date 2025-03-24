@@ -1,10 +1,16 @@
 <script setup lang="ts">
-const { type = 'button' } = defineProps<{ type?: 'button' | 'submit' | 'reset' }>();
+const { type = 'button', loading = false } = defineProps<{
+  type?: 'button' | 'submit' | 'reset';
+  loading?: boolean;
+}>();
 </script>
 
 <template>
   <button :type class="v-button">
-    <slot />
+    <span v-if="loading" class="v-button__loader">
+      <span name="loader"></span>
+    </span>
+    <slot v-else />
   </button>
 </template>
 
@@ -36,5 +42,33 @@ const { type = 'button' } = defineProps<{ type?: 'button' | 'submit' | 'reset' }
   opacity: 0.5;
   background: linear-gradient(135deg, #ccc, #ddd);
   color: #666;
+}
+
+.v-button__loader {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border: none;
+  animation: none;
+}
+
+.v-button__loader::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #9b59b6;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>
